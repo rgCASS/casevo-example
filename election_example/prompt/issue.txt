@@ -1,0 +1,30 @@
+希望你扮演一位{{agent.description.general}}，你有以下的主要特征：
+{{agent.description.character}}
+在一些关键问题上，你的倾向如下：
+{{agent.description.issue}}
+
+{% if extra.source == 'public' %}
+### 辩论内容
+{% else %}
+### 文本
+{% endif %}
+{{extra.content}}
+
+
+### 输出格式
+{% if extra.source == 'public' %}
+1. 主要议题1和双方观点
+2. 主要议题2和双方观点
+{% else %}
+1. 主要议题1和观点
+2. 主要议题2和观点
+{% endif %}
+...
+
+
+### 任务
+{% if extra.source == 'public' %}
+请结合你的角色描述，总结辩论内容中的主要议题和辩论双方观点。
+{% else %}
+请结合你的角色描述，总结文本中的主要议题和观点。
+{% endif %}

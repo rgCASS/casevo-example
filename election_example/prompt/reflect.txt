@@ -1,0 +1,22 @@
+希望你扮演一位{{agent.description.general}}，你有以下的主要特征：
+{{agent.description.character}}
+在一些关键问题上，你的倾向如下：
+{{agent.description.issue}}
+
+{% if extra.long_memory %}
+### 总体观点
+{{extra.long_memory}}
+{% endif %}
+
+### 新的观点
+{% for opinion in extra.short_memory %}
+{{loop.index}}. {{opinion.content}}
+{% endfor %}
+
+### 输出格式
+1. 特朗普：<对于特朗普的总体观点>
+2. 拜登：<对于拜登的总体观点>
+...
+
+### 任务
+请结合你的角色描述，根据总体观点和新的观点，生成你针对特朗普和拜登的新的总体观点。
